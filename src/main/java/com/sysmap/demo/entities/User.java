@@ -17,4 +17,7 @@ public class User {
    protected void setId() {
        this.id = UUID.randomUUID();
    }
+
+    public Object getId() {
+    }
 }
