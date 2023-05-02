@@ -26,7 +26,7 @@ public class UserService implements IUserService {
     public FindUserResponse findUserByEmail(String email) {
         var user = _userRepository.findUserByEmail(email).get();
 
-        var response = new FindUserResponse() (user.getId(), user.getName(), user.getEmail());
+        var response = new (FindUserResponse(), user.getId(), user.getName(), user.getEmail());
 
         return response;
     }
