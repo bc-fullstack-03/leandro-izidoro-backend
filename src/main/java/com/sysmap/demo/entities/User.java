@@ -1,6 +1,7 @@
 package com.sysmap.demo.entities;
 
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
 import java.util.UUID;
 
@@ -23,7 +24,7 @@ public class User {
         this.id = UUID.randomUUID();
    }
 
-    public Object getId() {
+    public UUID getId() {
         return User.this.id;
     }
 }
