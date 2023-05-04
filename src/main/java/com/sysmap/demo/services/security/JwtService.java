@@ -38,4 +38,9 @@ public class JwtService implements IJwtService {
     private Key genSignInKey() {
         return Keys.hmacShaKeyFor(Decoders.BASE64.decode(KEY));
     }
+
+    @Override
+    public String generateToken(UUID userId) {
+        return null;
+    }
 }
