@@ -15,16 +15,16 @@ services:
         - "8055:8080"
 
   environment:
-             - SERVICES=s3
-             - DEBUG=1
-             - DATA_DIR=/tmp/localstack/data
+        - SERVICES=s3
+        - DEBUG=1
+        - DATA_DIR=/tmp/localstack/data
 
   volumes:
-      - ./tmp/localstack:/tmp/localstack
-      - /var/run/docker.sock:/var/run/docker.sock
+        - ./tmp/localstack:/tmp/localstack
+        - /var/run/docker.sock:/var/run/docker.sock
 
   demo-app:
   image: renanalvesbr/demo-app:latest
   container_name: demo-app
   ports:
-      - 8082:8082
+        - 8082:8082
