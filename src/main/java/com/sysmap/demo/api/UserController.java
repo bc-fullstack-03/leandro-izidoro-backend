@@ -2,6 +2,7 @@ package com.sysmap.demo.api;
 
 import com.sysmap.demo.services.security.IJwtService;
 import com.sysmap.demo.services.user.CreateUserRequest;
+import com.sysmap.demo.services.user.FindUserResponse;
 import com.sysmap.demo.services.user.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
