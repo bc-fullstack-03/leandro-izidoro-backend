@@ -4,8 +4,10 @@ import com.sysmap.demo.services.authentication.AuthenticateResponse;
 import com.sysmap.demo.services.authentication.AuthenticateRequest;
 import com.sysmap.demo.services.authentication.IAuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,9 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthenticationController {
 
     @Autowired
-    private IAuthenticationService _authenticateService;
+    private IAuthenticationService _autheticationService;
     @PostMapping()
-    public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request) {
-        return ResponseEntity.ok().body(_authenticationService.authenticate(request));
+    public ResponseEntity<AuthenticateResponse> authenticate(@RequestBody AuthenticateRequest request) {
+        try {
+            return ResponseEntity.ok().body(_autheticationService.authenticate(request));
+        } catch (Exception e) {
+            return new ResponseEntity(e.getMessage(), HttpStatus.UNAUTHORIZED);
+        }
     }
 }
+
