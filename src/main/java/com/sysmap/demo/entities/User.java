@@ -14,17 +14,17 @@ public class User {
     private String password;
     private String photoUri;
 
-    public User(String name, String email, String password) {
+    public User(String name, String email) {
         this.setId();
         this.name = name;
         this.email = email;
-        this.password = password;
-   }
-   protected void setId() {
+    }
+
+    protected void setId() {
         this.id = UUID.randomUUID();
-   }
+    }
 
     public UUID getId() {
-        return User.this.id;
+        return this.id;
     }
 }
